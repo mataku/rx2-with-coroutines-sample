@@ -34,6 +34,11 @@ object Dep {
         const val loggingInterceptor = "com.squareup.okhttp3:logging-interceptor:4.7.2"
     }
 
+    object Rxjava {
+        const val rxJava = "io.reactivex.rxjava2:rxjava:2.2.19"
+        const val rxAndroid = "io.reactivex.rxjava2:rxandroid:2.1.1"
+    }
+
     const val material = "com.google.android.material:material:1.1.0"
     const val moshi = "com.squareup.moshi:moshi:1.9.3"
 }

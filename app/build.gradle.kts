@@ -56,6 +56,9 @@ dependencies {
     implementation(Dep.material)
     implementation(Dep.moshi)
 
+    implementation(Dep.Rxjava.rxJava)
+    implementation(Dep.Rxjava.rxAndroid)
+
     implementation(Dep.Retrofit.retrofit2)
     implementation(Dep.Retrofit.moshiConverter)
     implementation(Dep.Retrofit.rxjava2Adapter)
