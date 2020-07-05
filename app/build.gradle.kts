@@ -19,6 +19,9 @@ android {
         versionCode = 1
         versionName = "1.0"
 
+        buildConfigField("String", "API_KEY", "${rootProject.ext["API_KEY"]}")
+        buildConfigField("String", "SHARED_SECRET", "${rootProject.ext["SHARED_SECRET"]}")
+
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
         proguardFiles(getDefaultProguardFile("proguard-android-optimize.txt"), "proguard-rules.pro")
     }

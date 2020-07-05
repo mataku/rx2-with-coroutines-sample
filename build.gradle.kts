@@ -24,3 +24,6 @@ allprojects {
 task("clean", Delete::class) {
     delete = setOf(rootProject.buildDir)
 }
+
+//  Use user-defined values in local.properties as ${rootProject.ext["KEY"]}"
+loadProperties("$rootDir/local.properties", ext)
