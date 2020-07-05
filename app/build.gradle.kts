@@ -55,6 +55,7 @@ dependencies {
     implementation(Dep.AndroidX.coreKtx)
     implementation(Dep.material)
     implementation(Dep.moshi)
+    implementation(Dep.moshiKotlin)
 
     implementation(Dep.Rxjava.rxJava)
     implementation(Dep.Rxjava.rxAndroid)

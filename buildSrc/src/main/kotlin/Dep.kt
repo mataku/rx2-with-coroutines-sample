@@ -41,4 +41,5 @@ object Dep {
 
     const val material = "com.google.android.material:material:1.1.0"
     const val moshi = "com.squareup.moshi:moshi:1.9.3"
+    const val moshiKotlin = "com.squareup.moshi:moshi-kotlin:1.9.3"
 }
