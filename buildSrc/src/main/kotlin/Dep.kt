@@ -12,7 +12,7 @@ object Dep {
     }
 
     object Gradle {
-        const val androidGradlePlugin = "com.android.tools.build:gradle:4.1.0-alpha10"
+        const val androidGradlePlugin = "com.android.tools.build:gradle:4.1.0-beta03"
         const val kotlinGradlePlugin = "org.jetbrains.kotlin:kotlin-gradle-plugin:$KOTLIN_VERSION"
     }
 
