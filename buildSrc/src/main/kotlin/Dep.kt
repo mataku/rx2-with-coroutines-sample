@@ -39,6 +39,9 @@ object Dep {
         const val rxAndroid = "io.reactivex.rxjava2:rxandroid:2.1.1"
     }
 
+    const val constraintLayout = "androidx.constraintlayout:constraintlayout:1.1.3"
+    const val glide = "com.github.bumptech.glide:glide:4.11.0"
+    const val glideCompiler = "com.github.bumptech.glide:compiler:4.11.0"
     const val material = "com.google.android.material:material:1.1.0"
     const val moshi = "com.squareup.moshi:moshi:1.9.3"
     const val moshiKotlin = "com.squareup.moshi:moshi-kotlin:1.9.3"

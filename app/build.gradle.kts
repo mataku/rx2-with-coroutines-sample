@@ -2,11 +2,18 @@ plugins {
     id("com.android.application")
     id("kotlin-android")
     id("kotlin-android-extensions")
+    id("kotlin-kapt")
 }
 
 android {
     compileSdkVersion(29)
     buildToolsVersion("29.0.3")
+
+    buildFeatures {
+        dataBinding {
+            isEnabled = true
+        }
+    }
 
     viewBinding {
         isEnabled = true
@@ -57,8 +64,12 @@ dependencies {
     implementation(Dep.moshi)
     implementation(Dep.moshiKotlin)
 
+    implementation(Dep.constraintLayout)
+
     implementation(Dep.Rxjava.rxJava)
     implementation(Dep.Rxjava.rxAndroid)
+    implementation(Dep.glide)
+    kapt(Dep.glideCompiler)
 
     implementation(Dep.Retrofit.retrofit2)
     implementation(Dep.Retrofit.moshiConverter)
