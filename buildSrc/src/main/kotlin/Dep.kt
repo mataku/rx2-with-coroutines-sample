@@ -1,6 +1,7 @@
 object Dep {
 
     private const val KOTLIN_VERSION = "1.3.72"
+    private const val KOTLIN_COROUTINES_VERSION = "1.3.8"
 
     object AndroidX {
         const val appCompat = "androidx.appcompat:appcompat:1.1.0"
@@ -11,19 +12,25 @@ object Dep {
 
     object Kotlin {
         const val stdlib = "org.jetbrains.kotlin:kotlin-stdlib:$KOTLIN_VERSION"
-        const val coroutinesCore = "org.jetbrains.kotlinx:kotlinx-coroutines-core:1.3.8"
+        const val coroutinesCore =
+            "org.jetbrains.kotlinx:kotlinx-coroutines-core:$KOTLIN_COROUTINES_VERSION"
     }
 
     object Gradle {
         const val androidGradlePlugin = "com.android.tools.build:gradle:4.1.0-beta03"
         const val kotlinGradlePlugin = "org.jetbrains.kotlin:kotlin-gradle-plugin:$KOTLIN_VERSION"
+        const val androidJunit5 = "de.mannodermaus.gradle.plugins:android-junit5:1.6.2.0"
     }
 
     object Test {
         const val junit = "junit:junit:4.13"
         const val kotlinTestJunit = "org.jetbrains.kotlin:kotlin-test-junit:$KOTLIN_VERSION"
         const val androidxTestCore = "androidx.test:core:1.2.0"
+        const val coreTesting = "androidx.arch.core:core-testing:2.1.0"
         const val mockitoCore = "org.mockito:mockito-core:2.25.1"
+        const val mockitoKotlin = "com.nhaarman.mockitokotlin2:mockito-kotlin:2.2.0"
+        const val kotlinCoroutinesTest =
+            "org.jetbrains.kotlinx:kotlinx-coroutines-test:$KOTLIN_COROUTINES_VERSION"
     }
 
     object Retrofit {

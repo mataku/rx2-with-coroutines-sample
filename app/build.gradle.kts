@@ -14,7 +14,7 @@ android {
             isEnabled = true
         }
     }
-    
+
     defaultConfig {
         applicationId = "com.mataku.rx2_with_coroutines_sample"
         minSdkVersion(23)
@@ -84,4 +84,7 @@ dependencies {
     testImplementation(Dep.Test.kotlinTestJunit)
     testImplementation(Dep.Test.androidxTestCore)
     testImplementation(Dep.Test.mockitoCore)
+    testImplementation(Dep.Test.coreTesting)
+    testImplementation(Dep.Test.mockitoKotlin)
+    testImplementation(Dep.Test.kotlinCoroutinesTest)
 }
