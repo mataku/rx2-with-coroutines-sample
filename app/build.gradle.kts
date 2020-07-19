@@ -14,11 +14,7 @@ android {
             isEnabled = true
         }
     }
-
-    viewBinding {
-        isEnabled = true
-    }
-
+    
     defaultConfig {
         applicationId = "com.mataku.rx2_with_coroutines_sample"
         minSdkVersion(23)
@@ -44,6 +40,9 @@ android {
     buildTypes {
         getByName("release") {
             isMinifyEnabled = false
+        }
+        getByName("debug") {
+            isDebuggable = true
         }
     }
     compileOptions {
