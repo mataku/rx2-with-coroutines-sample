@@ -5,6 +5,7 @@ object Dep {
     object AndroidX {
         const val appCompat = "androidx.appcompat:appcompat:1.1.0"
         const val coreKtx = "androidx.core:core-ktx:1.3.0"
+        const val lifecycleViewModelKtx = "androidx.lifecycle:lifecycle-viewmodel-ktx:2.2.0"
     }
 
     object Kotlin {
