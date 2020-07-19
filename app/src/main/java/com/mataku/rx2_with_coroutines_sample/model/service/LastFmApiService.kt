@@ -1,6 +1,7 @@
 package com.mataku.rx2_with_coroutines_sample.model.service
 
 import com.mataku.rx2_with_coroutines_sample.model.entity.TopArtistsApiResponse
+import com.mataku.rx2_with_coroutines_sample.model.entity.TopTracksApiResponse
 import retrofit2.Response
 import retrofit2.http.GET
 
@@ -17,5 +18,5 @@ interface CoroutinesApiService {
         apiKey: String,
         limit: Int,
         page: Int
-    ): Response<TopArtistsApiResponse>
+    ): Response<TopTracksApiResponse>
 }
