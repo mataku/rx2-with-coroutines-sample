@@ -5,11 +5,13 @@ object Dep {
     object AndroidX {
         const val appCompat = "androidx.appcompat:appcompat:1.1.0"
         const val coreKtx = "androidx.core:core-ktx:1.3.0"
+        const val activityKtx = "androidx.activity:activity-ktx:1.1.0"
         const val lifecycleViewModelKtx = "androidx.lifecycle:lifecycle-viewmodel-ktx:2.2.0"
     }
 
     object Kotlin {
         const val stdlib = "org.jetbrains.kotlin:kotlin-stdlib:$KOTLIN_VERSION"
+        const val coroutinesCore = "org.jetbrains.kotlinx:kotlinx-coroutines-core:1.3.8"
     }
 
     object Gradle {

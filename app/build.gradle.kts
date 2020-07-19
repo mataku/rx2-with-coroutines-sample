@@ -61,9 +61,12 @@ dependencies {
     implementation(Dep.AndroidX.appCompat)
     implementation(Dep.AndroidX.coreKtx)
     implementation(Dep.AndroidX.lifecycleViewModelKtx)
+    implementation(Dep.AndroidX.activityKtx)
     implementation(Dep.material)
     implementation(Dep.moshi)
     implementation(Dep.moshiKotlin)
+
+    implementation(Dep.Kotlin.coroutinesCore)
 
     implementation(Dep.constraintLayout)
 
