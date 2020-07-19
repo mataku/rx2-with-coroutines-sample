@@ -1,5 +1,6 @@
 package com.mataku.rx2_with_coroutines_sample.model.repository
 
+import android.util.Log
 import com.mataku.rx2_with_coroutines_sample.BuildConfig
 import com.mataku.rx2_with_coroutines_sample.model.entity.Track
 import com.mataku.rx2_with_coroutines_sample.model.presentation.NetworkResult
@@ -21,6 +22,7 @@ class TopTracksRepository(private val apiService: CoroutinesApiService) {
                 NetworkResult.failure(Throwable())
             }
         } catch (e: Exception) {
+            Log.i("MATAKUDEBUG", e.toString())
             NetworkResult.failure<List<Track>>(TimeoutException())
         }
     }
