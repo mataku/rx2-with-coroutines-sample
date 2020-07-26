@@ -87,4 +87,5 @@ dependencies {
     testImplementation(Dep.Test.coreTesting)
     testImplementation(Dep.Test.mockitoKotlin)
     testImplementation(Dep.Test.kotlinCoroutinesTest)
+    testImplementation(Dep.Test.mockWebServer)
 }

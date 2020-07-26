@@ -2,6 +2,7 @@ object Dep {
 
     private const val KOTLIN_VERSION = "1.3.72"
     private const val KOTLIN_COROUTINES_VERSION = "1.3.8"
+    private const val OKHTTP_VERSION = "4.7.2"
 
     object AndroidX {
         const val appCompat = "androidx.appcompat:appcompat:1.1.0"
@@ -31,6 +32,7 @@ object Dep {
         const val mockitoKotlin = "com.nhaarman.mockitokotlin2:mockito-kotlin:2.2.0"
         const val kotlinCoroutinesTest =
             "org.jetbrains.kotlinx:kotlinx-coroutines-test:$KOTLIN_COROUTINES_VERSION"
+        const val mockWebServer = "com.squareup.okhttp3:mockwebserver:$OKHTTP_VERSION"
     }
 
     object Retrofit {
@@ -40,8 +42,8 @@ object Dep {
     }
 
     object OkHttp {
-        const val okhttp3 = "com.squareup.okhttp3:okhttp:4.7.2"
-        const val loggingInterceptor = "com.squareup.okhttp3:logging-interceptor:4.7.2"
+        const val okhttp3 = "com.squareup.okhttp3:okhttp:$OKHTTP_VERSION"
+        const val loggingInterceptor = "com.squareup.okhttp3:logging-interceptor:$OKHTTP_VERSION"
     }
 
     object Rxjava {
