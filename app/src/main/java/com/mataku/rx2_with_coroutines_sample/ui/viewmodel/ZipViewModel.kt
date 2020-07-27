@@ -4,6 +4,7 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import com.mataku.rx2_with_coroutines_sample.BuildConfig
 import com.mataku.rx2_with_coroutines_sample.model.entity.Artist
 import com.mataku.rx2_with_coroutines_sample.model.entity.Track
 import com.mataku.rx2_with_coroutines_sample.model.repository.TopArtistsRepository
@@ -27,7 +28,13 @@ class ZipViewModel(
     fun request() {
         viewModelScope.launch {
             withContext(Dispatchers.IO) {
-                val artistRequestFlow = flowOf(topArtistsRepository.getTopArtists())
+                val artistRequestFlow = flowOf(
+                    topArtistsRepository.getTopArtists(
+                        apiKey = BuildConfig.API_KEY,
+                        limit = 3,
+                        page = 1
+                    )
+                )
                 val tracksRequestFlow = flowOf(topTracksRepository.getTopTracks())
                 artistRequestFlow.zip(tracksRequestFlow) { artistResult, tracksResult ->
                     val artists = artistResult.getOrNull() ?: emptyList()

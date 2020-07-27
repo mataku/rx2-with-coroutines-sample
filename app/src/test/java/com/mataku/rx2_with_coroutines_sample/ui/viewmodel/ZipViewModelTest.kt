@@ -1,6 +1,7 @@
 package com.mataku.rx2_with_coroutines_sample.ui.viewmodel
 
 import androidx.arch.core.executor.testing.InstantTaskExecutorRule
+import com.mataku.rx2_with_coroutines_sample.BuildConfig
 import com.mataku.rx2_with_coroutines_sample.helper.TestObserver
 import com.mataku.rx2_with_coroutines_sample.model.entity.Artist
 import com.mataku.rx2_with_coroutines_sample.model.entity.Track
@@ -50,6 +51,8 @@ class ZipViewModelTest {
         playcount = 1
     )
 
+    private val apiKey = "test"
+
     @BeforeTest
     fun setup() {
         Dispatchers.setMain(mainThreadSurrogate)
@@ -72,7 +75,13 @@ class ZipViewModelTest {
         )
 
         runBlockingTest {
-            Mockito.`when`(topArtistsRepo.getTopArtists()).thenReturn(
+            Mockito.`when`(
+                topArtistsRepo.getTopArtists(
+                    apiKey = BuildConfig.API_KEY,
+                    limit = 3,
+                    page = 1
+                )
+            ).thenReturn(
                 NetworkResult.success(listOf(mockArtist))
             )
 

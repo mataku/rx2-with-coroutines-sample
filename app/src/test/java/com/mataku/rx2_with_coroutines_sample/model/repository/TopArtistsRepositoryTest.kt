@@ -63,9 +63,10 @@ class TopArtistsRepositoryTest {
         )
 
         val repo = TopArtistsRepository(apiService = apiService)
-        val result = repo.getTopArtists()
+        val result = repo.getTopArtists(
+            apiKey, limit, page
+        )
         assertTrue(result is NetworkResult.Success)
         assertNotNull(result.getOrNull())
     }
-
 }

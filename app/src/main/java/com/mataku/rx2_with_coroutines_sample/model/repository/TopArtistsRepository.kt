@@ -7,7 +7,11 @@ import com.mataku.rx2_with_coroutines_sample.model.presentation.TimeoutException
 import com.mataku.rx2_with_coroutines_sample.model.service.CoroutinesApiService
 
 class TopArtistsRepository(private val apiService: CoroutinesApiService) {
-    suspend fun getTopArtists(): NetworkResult<List<Artist>> {
+    suspend fun getTopArtists(
+        apiKey: String,
+        limit: Int,
+        page: Int
+    ): NetworkResult<List<Artist>> {
         return try {
             val result = apiService.getTopArtists(
                 apiKey = BuildConfig.API_KEY,
