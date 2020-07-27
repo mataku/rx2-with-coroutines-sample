@@ -7,16 +7,26 @@ import com.mataku.rx2_with_coroutines_sample.model.entity.Track
 import com.mataku.rx2_with_coroutines_sample.model.presentation.NetworkResult
 import com.mataku.rx2_with_coroutines_sample.model.repository.TopArtistsRepository
 import com.mataku.rx2_with_coroutines_sample.model.repository.TopTracksRepository
+import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.ExperimentalCoroutinesApi
+import kotlinx.coroutines.ObsoleteCoroutinesApi
+import kotlinx.coroutines.newSingleThreadContext
+import kotlinx.coroutines.test.resetMain
 import kotlinx.coroutines.test.runBlockingTest
+import kotlinx.coroutines.test.setMain
 import org.junit.Assert
 import org.junit.Rule
 import org.mockito.Mockito
+import kotlin.test.AfterTest
+import kotlin.test.BeforeTest
 import kotlin.test.Test
 import kotlin.test.assertNotNull
 
+@ObsoleteCoroutinesApi
 @ExperimentalCoroutinesApi
 class ZipViewModelTest {
+
+    private val mainThreadSurrogate = newSingleThreadContext("UI thread")
 
     @Rule
     @JvmField
@@ -39,6 +49,17 @@ class ZipViewModelTest {
         url = "https://www.last.fm/ja/music/PassCode/_/Taking+You+Out",
         playcount = 1
     )
+
+    @BeforeTest
+    fun setup() {
+        Dispatchers.setMain(mainThreadSurrogate)
+    }
+
+    @AfterTest
+    fun tearDown() {
+        Dispatchers.resetMain()
+        mainThreadSurrogate.close()
+    }
 
     @Test
     fun request_success() {
