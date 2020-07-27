@@ -2,12 +2,13 @@ package com.mataku.rx2_with_coroutines_sample.model.service
 
 import androidx.arch.core.executor.testing.InstantTaskExecutorRule
 import com.mataku.rx2_with_coroutines_sample.fixture.TopArtistsResponse
+import com.mataku.rx2_with_coroutines_sample.helper.TestCoroutinesRule
+import com.mataku.rx2_with_coroutines_sample.helper.runBlocking
 import com.mataku.rx2_with_coroutines_sample.model.entity.TopArtists
 import com.squareup.moshi.Moshi
 import com.squareup.moshi.kotlin.reflect.KotlinJsonAdapterFactory
 import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.ObsoleteCoroutinesApi
-import kotlinx.coroutines.runBlocking
 import okhttp3.OkHttpClient
 import okhttp3.mockwebserver.Dispatcher
 import okhttp3.mockwebserver.MockResponse
@@ -33,6 +34,10 @@ class CoroutinesApiServiceTest {
     @JvmField
     val instantTaskExecutorRule = InstantTaskExecutorRule()
 
+    @Rule
+    @JvmField
+    val testCoroutineRule = TestCoroutinesRule()
+
     @BeforeTest
     fun setup() {
         mockWebServer = MockWebServer()
@@ -49,7 +54,7 @@ class CoroutinesApiServiceTest {
     }
 
     @Test
-    fun getTopArtists_success() = runBlocking {
+    fun getTopArtists_success() = testCoroutineRule.runBlocking {
         val requestPath = "/2.0/?method=chart.gettopartists&format=json"
 
         val mockResponseBody = TopArtistsResponse.get()
